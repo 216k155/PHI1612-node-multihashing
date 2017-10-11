@@ -660,6 +660,7 @@ void init(Handle<Object> exports) {
     exports->Set(NanNew<String>("lyra2rev2"), NanNew<FunctionTemplate>(lyra2rev2)->GetFunction());
     exports->Set(NanNew<String>("lyra2z"), NanNew<FunctionTemplate>(lyra2z)->GetFunction());
     exports->Set(NanNew<String>("tribus"), NanNew<FunctionTemplate>(tribus)->GetFunction());
+    exports->Set(NanNew<String>("phi1612"), NanNew<FunctionTemplate>(phi1612)->GetFunction());
 }
 
 NODE_MODULE(multihashing, init)
