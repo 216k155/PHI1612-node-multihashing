@@ -47,6 +47,7 @@
                 "sha3/sph_cubehash.c",
                 "sha3/sph_echo.c",
                 "sha3/sph_groestl.c",
+                "sha3/sph_gost.c",
                 "sha3/sph_jh.c",
                 "sha3/sph_keccak.c",
                 "sha3/sph_luffa.c",

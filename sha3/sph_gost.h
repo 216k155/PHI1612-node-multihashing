@@ -29,8 +29,8 @@
  *
  * ===========================(LICENSE END)=============================
  *
- * @file     sph_gost.h
- * @author   Thomas Pornin <thomas.pornin@cryptolog.com>
+ * @file    sph_gost.h
+ * @author  ivan <ivansib@users.noreply.github.com> 
  */
 
 #ifndef SPH_GOST_H__
