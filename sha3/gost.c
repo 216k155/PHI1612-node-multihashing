@@ -5,7 +5,7 @@
 #include <memory.h>
 #include <math.h>
 
-#include "sph_gost.h"
+#include "gost.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -939,7 +939,7 @@ static void hash_X(unsigned char *IV,const unsigned char *message,unsigned long 
 
 	g_N(N,hash,m);
 	v512[63] = len & 0xFF;
-	v512[62] = (unsigned char) (len >> 8);
+	v512[62] = len >> 8;
 	AddModulo512(N,v512,N);
 
 	AddModulo512(Sigma,m,Sigma);
@@ -1043,4 +1043,3 @@ sph_gost512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 #ifdef __cplusplus
 }
 #endif
-

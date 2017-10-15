@@ -13,7 +13,7 @@
                 "bcrypt.c",
                 "groestl.c",
                 "blake.c",
-                "gost.c",
+           
                 "tribus.c",
                 "hefty1.c",
                 "shavite3.c",
@@ -33,21 +33,16 @@
 		"Lyra2Z.c",
 
                 "phi1612.c",
-                "sph/sph_skein.h",
-                "sph/sph_jh.h",  
-                "sph/sph_cubehash.h", 
-                "sph/sph_fungue.h",
-                "sph/sph_gost.h",
-                "sph/sph_echo.h",
+          
 
-                "sha3/sph_hefty1.c",
+                "sha3/sph_fugue.c",
                 "sha3/aes_helper.c",
                 "sha3/sph_blake.c",
                 "sha3/sph_bmw.c",
                 "sha3/sph_cubehash.c",
                 "sha3/sph_echo.c",
                 "sha3/sph_groestl.c",
-                "sha3/sph_gost.c",
+               
                 "sha3/sph_jh.c",
                 "sha3/sph_keccak.c",
                 "sha3/sph_luffa.c",

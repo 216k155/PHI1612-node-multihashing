@@ -319,3 +319,4 @@ void sph_hamsi512_addbits_and_close(
 #endif
 
 #endif
+

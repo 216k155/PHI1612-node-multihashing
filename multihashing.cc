@@ -14,7 +14,7 @@ extern "C" {
     #include "x11.h"
     #include "groestl.h"
     #include "blake.h"
-    #include "gost.h"
+    
     #include "qubit.h"
     #include "tribus.h"
     #include "hefty1.h"
@@ -318,29 +318,6 @@ NAN_METHOD(blake) {
     );
 }
 
-
-NAN_METHOD(gost) {
-    NanScope();
-
-    if (args.Length() < 1)
-        return THROW_ERROR_EXCEPTION("You must provide one argument.");
-
-    Local<Object> target = args[0]->ToObject();
-
-    if(!Buffer::HasInstance(target))
-        return THROW_ERROR_EXCEPTION("Argument should be a buffer object.");
-
-    char * input = Buffer::Data(target);
-    char output[8];
-
-    uint32_t input_len = Buffer::Length(target);
-
-    gost_hash(input, output, input_len);
-
-    NanReturnValue(
-        NanNewBufferHandle(output, 8)
-    );
-}
 
 
 NAN_METHOD(qubit) {
@@ -647,7 +624,7 @@ void init(Handle<Object> exports) {
     exports->Set(NanNew<String>("groestl"), NanNew<FunctionTemplate>(groestl)->GetFunction());
     exports->Set(NanNew<String>("groestlmyriad"), NanNew<FunctionTemplate>(groestlmyriad)->GetFunction());
     exports->Set(NanNew<String>("blake"), NanNew<FunctionTemplate>(blake)->GetFunction());
-    exports->Set(NanNew<String>("gost"), NanNew<FunctionTemplate>(gost)->GetFunction());
+    
     exports->Set(NanNew<String>("qubit"), NanNew<FunctionTemplate>(qubit)->GetFunction());
     exports->Set(NanNew<String>("hefty1"), NanNew<FunctionTemplate>(hefty1)->GetFunction());
     exports->Set(NanNew<String>("shavite3"), NanNew<FunctionTemplate>(shavite3)->GetFunction());

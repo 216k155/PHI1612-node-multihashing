@@ -1,11 +1,13 @@
-#ifndef PHI1612_H
-#define PHI1612_H
+#ifndef PHI_H
+#define PHI_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void phi1612_hash(const char* input, char* output);
+#include <stdint.h>
+
+void phi_hash(const char* input, char* output, uint32_t len);
 
 #ifdef __cplusplus
 }
