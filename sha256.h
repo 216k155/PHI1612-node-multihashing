@@ -325,7 +325,7 @@ HMAC_SHA256_Init(HMAC_SHA256_CTX * ctx, const void * _K, size_t Klen)
 	unsigned char khash[32];
 	const unsigned char * K = _K;
 	size_t i;
-
+	
 	/* If Klen > 64, the key is really SHA256(K). */
 	if (Klen > 64) {
 		SHA256_Init(&ctx->ictx);
@@ -349,6 +349,7 @@ HMAC_SHA256_Init(HMAC_SHA256_CTX * ctx, const void * _K, size_t Klen)
 		pad[i] ^= K[i];
 	SHA256_Update(&ctx->octx, pad, 64);
 
+	
 	/* Clean the stack. */
 	memset(khash, 0, 32);
 }
@@ -357,7 +358,6 @@ HMAC_SHA256_Init(HMAC_SHA256_CTX * ctx, const void * _K, size_t Klen)
 static void
 HMAC_SHA256_Update(HMAC_SHA256_CTX * ctx, const void *in, size_t len)
 {
-
 	/* Feed data to the inner SHA256 operation. */
 	SHA256_Update(&ctx->ictx, in, len);
 }
