@@ -16,7 +16,7 @@
 
 #include "common.h"
 
-void phi_hash(const char* input, char* output, uint32_t len)
+void phi1612_hash(const char* input, char* output, uint32_t len)
 {
 	sph_skein512_context        ctx_skein;
 	sph_jh512_context           ctx_jh;
